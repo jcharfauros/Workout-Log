@@ -1,8 +1,10 @@
 # Workout Server
 
-If you are getting started on this project We would recommend the following
+Screenshots for Workout Server assignment. Server side is fully functional.
 
-## Create your folders
+## Register a user
+
+![image info](assets/WL_register.jpg)
 
 - Middleware
 - Controllers
