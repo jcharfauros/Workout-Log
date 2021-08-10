@@ -50,18 +50,30 @@ router.put('/update/:logId', validateSession, function(req, res) {
     const query = { where: { id: req.params.logId, owner_id: req.user.id }};
 
     Log.update(updateLogEntry, query) 
-        .then((logs) => res.status(200).json(logs))
+        .then((logs) => res.status(200).json(logs))        
         .catch((err) => res.status(500).json({ error: err }));
 });
 
 /* DELETE LOG - /log/:logId DELETE*/
 router.delete('/delete/:logId', validateSession, function (req, res) {
 
-    const query = { where: { id: req.params.logId, owner_id: req.user.id }};
+    Log.destroy({
+        where: {
+            id: req.params.logId, 
+            owner_id: req.user.id
+        }
+    })
+    .then(function deleteEntry(log) {
+        if(log) {
 
-    Log.destroy(query)
-        .then(() => res.status(200).json({ message: "Workout log entry removed "}))
-        .catch((err) => res.status(500).json({ error: err }));
+            res.status(200).json({
+                log: log,
+                message: 'Workout log entry successfully deleted!',
+            })
+        } else {
+            res.status(502).send({ error: 'Unable to delete workout log!'});
+        }
+    });    
 });
 
 module.exports = router;
