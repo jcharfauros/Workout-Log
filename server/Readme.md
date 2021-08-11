@@ -46,7 +46,8 @@ Registered users are only allowed to update their own entries.
 
 Registered users are only allowed to delete their own entries.
 
-![Postman - Delete](https://github.com/jcharfauros/Workout-Log/blob/master/server/assets/WL_Delete.png)
+![Postman - Delete](https://github.com/jcharfauros/Workout-Log/blob/master/server/assets/WL_deleteSuccess.png)
+![Postman - Delete](https://github.com/jcharfauros/Workout-Log/blob/master/server/assets/WL_deleteErr.png)
 
 ## Folders that were created
 
