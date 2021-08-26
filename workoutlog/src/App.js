@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Auth from './auth/Auth';
 import Sitebar from './home/Navbar';
-import WorkoutIndex from './workouts/WorkoutIndex';
+import WorkoutIndex from './workouts/WorkoutIndex.js';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
